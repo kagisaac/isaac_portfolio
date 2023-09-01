@@ -209,15 +209,18 @@ ul{
     display: none;
     align-items: center;
     justify-content: center;
+    
 }
-.aside .nav-toggler span
+/*  ================================================================== */
+.aside .nav-toggler span 
 {
     height: 2px;
     width: 18px;
     background: var(--skin-color);
     display: inline-block;
     position: relative;
-   
+    
+    
 }
 
 .aside .nav-toggler span::before
@@ -776,11 +779,20 @@ padding: 0 50px;
     .aside .nav-toggler
     {
         display: flex;
-        margin-left: -250px;
+        margin-left: -30%;
+        
     }
     .aside
     {
         left: -270px;
+    }
+    .aside.active .nav-toggler  {
+        display: none;
+    } 
+    /* .aside .nav-toggler */
+    .aside.active{
+        left: 0%;
+        
     }
     .main-content
     {
@@ -794,6 +806,7 @@ padding: 0 50px;
 }
 @media(max-width:991px)
 {
+   
     .contact .contact-info-item,
     .portfolio .portfolio-item,
     .service .service-item
@@ -812,11 +825,18 @@ padding: 0 50px;
     {
         display:block;
         margin-top: 10%;
+        
     }
 }
 
 @media(max-width:767px)
 {
+    .aside .nav-toggler
+    {
+        display: flex;
+        margin-left: -70%;
+        
+    }
     .contact .contact-form .col-6,
     .contact .contact-info-item,
     .portfolio .portfolio-item,
@@ -834,4 +854,17 @@ padding: 0 50px;
     .section-title h2::after{
         display: none;
     }
+}
+
+.humburger.active .bar:nth-child(2)
+{
+    opacity: 0;
+}
+.humburger.active .bar:nth-child(1)
+{
+    transform: translateY(-8px) rotate(45deg);
+}
+.humburger.active .bar:nth-child(3)
+{
+    transform: translateY(-8px) rotate(-45deg);
 }
